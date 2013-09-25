@@ -1,1 +1,1 @@
-au BufNewFile,BufRead *.vcl setf vcl
+autocmd BufRead,BufNewFile,FileReadPost *.vcl set filetype=vcl
