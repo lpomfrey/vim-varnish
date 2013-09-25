@@ -65,7 +65,7 @@ syn match  vclOption   /obj\.\(proto\|status\|response\|cacheable\|ttl\|lastuse\
 " resp
 syn match  vclOption   /resp\.\(proto\|status\|response\)/
 " common: http.HEADERNAME
-syn match  vclOption   /\(req\|bereq\|resp\|obj\)\.http\.[A-Za-z][-_A-Za-z0-9]*/
+syn match  vclOption   /\(req\|bereq\|resp\|beresp\|obj\)\.http\.[A-Za-z][-_A-Za-z0-9]*/
 
 " Highlight the C block
 syn include @vclC syntax/c.vim
