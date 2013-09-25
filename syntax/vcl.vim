@@ -63,7 +63,7 @@ syn match  vclOption   /bereq\.\(request\|url\|proto\|connect_timeout\|first_byt
 " obj
 syn match  vclOption   /obj\.\(proto\|status\|response\|cacheable\|ttl\|lastuse\|hits\|hash\|grace\|prefetch\)/
 " beresp
-syn match  vclOption   /beresp\.\(proto\|status\|response\|cacheable\|ttl\|lastuse\|hits\|hash\|grace\|prefetch\)/
+syn match  vclOption   /beresp\.\(cacheable\|do_stream\|do_esi\|do_gzip\|do_gunzip\|hash\|hits\|lastuse\|proto\|status\|response\|ttl\|grace\|saintmode\|backend\.name\|backend\.ip\|backend\.port\|storage\)/
 " resp
 syn match  vclOption   /resp\.\(proto\|status\|response\)/
 " common: http.HEADERNAME
