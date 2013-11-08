@@ -31,9 +31,9 @@ endif
 "syn match  vclFunctionName "\h[[:alnum:]_:]*" contained
 "syn match  vclFunctionName "\h\w*[^:]" contained
 "
-syn keyword vclOperator     set call return error esi synthetic include remove unset
+syn keyword vclOperator     set call return error esi synthetic include remove unset purge ban
 " return modes
-syn keyword vclModes        deliver pipe pass hash lookup discard fetch restart
+syn keyword vclModes        deliver pipe pass hash lookup discard fetch restart hit_for_pass
 
 " C strings
 syn region vclString start=+L\="+ skip=+\\\\\|\\"+ end=+"+ contains=vclSpecial
@@ -50,14 +50,15 @@ syn keyword vclConditional  if else elsif elseif
 syn match  vclNumbers  display transparent "\<\d\|\.\d" contains=vclNumber,vclNumberTime
 syn match  vclNumber   display contained "\d\+"
 " set obj.ttl = 0s, 0m;
-syn match  vclNumberTime   display contained "\d\+[dhsm]"
+syn match  vclNumberTime   display contained "\d\+[dhsmw]"
+syn match  vclNumberBool   /\(true\|false\)/
 
 " client
 syn match  vclOption   /client\.ip/
 " server
 syn match  vclOption   /server\.\(ip\|port\)/
 " req
-syn match  vclOption   /req\.\(hash\|request\|url\|proto\|backend\.healthy\|backend\|grace\|xid\|restarts\)/
+syn match  vclOption   /req\.\(hash_always_miss\|hash\|request\|url\|proto\|backend\.healthy\|backend\|grace\|xid\|restarts\|esi_level\)/
 " bereq.
 syn match  vclOption   /bereq\.\(request\|url\|proto\|connect_timeout\|first_byte_timeout\|between_bytes_timeout\)/
 " obj
@@ -104,3 +105,4 @@ hi link vclModes            Operator
 hi link vclOption           Identifier
 hi link vclNumber           Number
 hi link vclNumberTime       Number
+hi link vclNumberBool       Number
