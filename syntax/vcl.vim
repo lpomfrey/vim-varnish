@@ -1,9 +1,6 @@
 " Vim syntax file
 " Filename:     vcl.vim
 " Language:     Varnish configuation Language, http://www.varnish-cache.org/wiki/VCL
-" Maintainer:   Elan Ruusamäe <glen@delfi.ee>
-" Version Info: $Revision: 1.7 $
-" Last Change:  $Date: 2010/04/06 08:24:28 $ UTC
 
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
@@ -13,24 +10,14 @@ elseif exists("b:current_syntax")
   finish
 endif
 
-" TODO
-" - sub ...
-" - backend/director/...
-" - acl ...
-" - error when invalid operator used in if (...)
-" - +=, = operators
-" - functions
-
 " Code Blocks
 "       sub NAME {
 "       backend NAME {
 "       director NAME FLAGS {
 "       acl NAME {
-"syn region vclCodeBlock start="\s*\<sub\|backend\|director\|acl\>" end="{"he=e-1 contains=vclCodeBlockName,vclFunctionName
-"syn match  vclCodeBlockName "\<sub\|backend\|director\|acl\>" contained
-"syn match  vclFunctionName "\h[[:alnum:]_:]*" contained
-"syn match  vclFunctionName "\h\w*[^:]" contained
-"
+syn region vclCodeBlock start="\s*\<sub\|backend\|director\|acl\>" end="{"he=e-1 contains=vclCodeBlockName
+syn match  vclCodeBlockName "\<sub\|backend\|director\|acl\>" contained
+
 
 syn match vclFunctionName "ban_url\|ban\|regsuball\|regsub\|hash_data"
 
