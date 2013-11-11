@@ -56,7 +56,7 @@ syn match  vclNumberBool   /\(true\|false\)/
 " client
 syn match  vclOption   /client\.ip/
 " server
-syn match  vclOption   /server\.\(ip\|port\)/
+syn match  vclOption   /server\.\(ip\|port\|identity\)/
 " req
 syn match  vclOption   /req\.\(hash_always_miss\|hash\|request\|url\|proto\|backend\.healthy\|backend\|grace\|xid\|restarts\|esi_level\)/
 " bereq.
